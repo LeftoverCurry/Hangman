@@ -6,7 +6,7 @@ def returning_user?
   else
     false
   end
-  end
+end
 
 # Needs to be moved to wrapper
 def create_new_instance

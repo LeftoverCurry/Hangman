@@ -9,7 +9,8 @@ class Display
     puts show_letter_choices(@game_data)
   end
 
-  # Pulls the files with the hangman image based off of the number of remaining guesses
+  # Pulls the files with the hangman image based off of the number of remaining
+  # guesses
   def hangman_image(game_data)
     case game_data.guesses_remaining
     when 5
@@ -22,7 +23,6 @@ class Display
       File.read('./views/two_remaining.txt')
     when 1
       File.read('./views/one_remaining.txt')
-
     end
   end
 

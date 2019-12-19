@@ -12,26 +12,21 @@ def fixture
   end
 end
 
-describe GameData do
+context 'new user' do
   game_data = GameData.new('test_name')
 
   it 'creates a new game_data object' do
     expect(game_data).to be_instance_of(GameData)
   end
 
-  it 'stores user name' do
-    expect(game_data.user_name).to eq('test_name')
-  end
-
   it 'creates new default info' do
+    expect(game_data.user_name).to eq('test_name')
     expect(game_data.chosen_letters).to eq([])
     expect(game_data.guesses_remaining).to eq(5)
-    expect(game_data.letters_left_to_guess).to be false
-    expect(game_data.randomly_picked_word).to eq([])
   end
 end
 
-describe 'GameData#save' do
+describe '#save' do
   fixture
 
   it 'saves a new file' do

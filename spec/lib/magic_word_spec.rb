@@ -2,8 +2,10 @@
 
 require './lib/magic_word.rb'
 
-describe 'Magic Word Class' do
-  magic_word = MagicWord.new
+describe MagicWord do
+  let(:magic_word) do
+    MagicWord.new
+  end
 
   it 'pulls a random word from dictionary file' do
     expect(magic_word.string).to be_instance_of(String)

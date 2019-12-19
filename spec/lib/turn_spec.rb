@@ -2,27 +2,20 @@
 
 require 'rspec'
 require './lib/turn.rb'
+def fixture
+  let(:game_data) { GameData.pull('tester_info') }
+  let(:input) { 'x' }
+  let(:test_cond) { true }
+  let(:turn) { Turn.new(game_data, input, test_cond) }
+end
 
 describe Turn do
-  let(:game_data) do
-    GameData.pull('tester_info')
-  end
-
-  let(:input) do
-    'x'
-  end
-
-  let(:test_cond) do
-    true
-  end
-
-  let(:turn) do
-    Turn.new(game_data, input, test_cond)
-  end
-
+  fixture
   describe 'Turn#show_display' do
     it 'pulls the correct display' do
-      expect(turn.display.show_correctly_picked(game_data)).to eq(' _  a  _  _ ')
+      expect(turn.display.show_correctly_picked(game_data)).to eq(
+        ' _  a  _  _ '
+      )
     end
   end
 

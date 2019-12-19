@@ -28,7 +28,9 @@ describe Display do
 
   describe '#show_letter_choices' do
     it 'shows incorrectly chosen letters' do
-      expect(display.show_letter_choices(game_data)).to eq('USED LETTERS: ["r", "s", "t", "a"]')
+      expect(display.show_letter_choices(game_data)).to eq(
+        'USED LETTERS: ["r", "s", "t", "a"]'
+      )
     end
   end
 end
