@@ -2,7 +2,7 @@
 
 require 'json'
 require './lib/magic_word.rb'
-# contains information to run or save a game
+# contains information to run or save a game.
 class GameData
   attr_accessor :user_name, :chosen_letters, :guesses_remaining
   attr_accessor :letters_left_to_guess, :randomly_picked_word
